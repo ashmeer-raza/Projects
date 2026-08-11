@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* 1. Kugile Font */
+@font-face {
+  font-family: 'Kugile';
+  src: url('./assets/fonts/Kugile_Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. Mavero Font */
+@font-face {
+  font-family: 'Mavero';
+  src: url('./assets/fonts/Mavero Free.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 3. Orange Avenue Font */
+@font-face {
+  font-family: 'OrangeAvenue';
+  src: url('./assets/fonts/OrangeAvenueDEMO-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 4. Orange Avenue Outline Font */
+@font-face {
+  font-family: 'OrangeAvenueOutline';
+  src: url('./assets/fonts/OrangeAvenueOutlineDEMO-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ticdar';
+  src: url('./assets/fonts/Ticdar-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-ticdar {
+  font-family: 'Ticdar', sans-serif;
+}
+
+.font-kugile {
+  font-family: 'Kugile', sans-serif;
+}
+
+.font-mavero {
+  font-family: 'Mavero', sans-serif;
+}
+
+.font-orange {
+  font-family: 'OrangeAvenue', sans-serif;
+}
+
+.font-orange-outline {
+  font-family: 'OrangeAvenueOutline', sans-serif;
+}
