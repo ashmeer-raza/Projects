@@ -1,0 +1,80 @@
+.intro-screen {
+  background: #050505;
+  color: #ffffff;
+  isolation: isolate;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.intro-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+/* =========================================
+   WHITE / GRAY AMBIENT GLOW
+========================================= */
+
+.intro-glow {
+  animation: introGlow 5s ease-in-out infinite;
+}
+
+@keyframes introGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.3;
+  }
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.intro-title {
+  color: #ffffff;
+  will-change: transform, opacity;
+}
+
+.intro-welcome,
+.intro-role {
+  will-change: transform, opacity;
+}
+
+.intro-line {
+  background: rgba(255, 255, 255, 0.25);
+  will-change: width, opacity;
+}
+
+/* =========================================
+   GRID MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .intro-grid {
+    background-size: 45px 45px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen {
+    display: none;
+  }
+}

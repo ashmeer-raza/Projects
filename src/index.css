@@ -1,60 +1,114 @@
 @import "tailwindcss";
 
-/* 1. Kugile Font */
-@font-face {
-  font-family: 'Kugile';
-  src: url('./assets/fonts/Kugile_Demo.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+/* Lenis Recommended CSS Reset */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
 
-/* 2. Mavero Font */
-@font-face {
-  font-family: 'Mavero';
-  src: url('./assets/fonts/Mavero Free.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-/* 3. Orange Avenue Font */
-@font-face {
-  font-family: 'OrangeAvenue';
-  src: url('./assets/fonts/OrangeAvenueDEMO-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
-/* 4. Orange Avenue Outline Font */
-@font-face {
-  font-family: 'OrangeAvenueOutline';
-  src: url('./assets/fonts/OrangeAvenueOutlineDEMO-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
-@font-face {
-  font-family: 'ticdar';
-  src: url('./assets/fonts/Ticdar-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
-.font-ticdar {
-  font-family: 'Ticdar', sans-serif;
+/* src/index.css */
+
+/* Hide default scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
 }
 
-.font-kugile {
-  font-family: 'Kugile', sans-serif;
+/* Hide default scrollbar for IE, Edge and Firefox */
+html,
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
 }
 
-.font-mavero {
-  font-family: 'Mavero', sans-serif;
+.intro-screen {
+  background: #050505;
+  isolation: isolate;
+  font-family: "Space Grotesk", sans-serif;
 }
 
-.font-orange {
-  font-family: 'OrangeAvenue', sans-serif;
+/* 
+   GRID
+*/
+
+.intro-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
-.font-orange-outline {
-  font-family: 'OrangeAvenueOutline', sans-serif;
+/* 
+   GLOW
+ */
+
+.intro-glow {
+  animation: introGlow 5s ease-in-out infinite;
+}
+
+@keyframes introGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+/* 
+   TEXT
+*/
+
+.intro-title {
+  will-change: transform, opacity;
+}
+
+.intro-welcome,
+.intro-role {
+  will-change: transform, opacity;
+}
+
+.intro-line {
+  will-change: width, opacity;
+}
+
+/* 
+   MOBILE
+ */
+
+@media (max-width: 640px) {
+  .intro-grid {
+    background-size: 45px 45px;
+  }
+}
+
+/*    REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen {
+    display: none;
+  }
 }

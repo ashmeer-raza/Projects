@@ -1,17 +1,29 @@
-// src/layout/MainLayout.js
+// src/layout/MainLayout.jsx
 import { Outlet } from "react-router";
+import { ReactLenis } from "lenis/react";
 import Navbar from "../components/Navbar";
+import CursorSpotlight from "../components/CursorSpotlight";
+import CustomScrollbar from "../components/CustomScrollbar";
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen bg-[#050505] text-white">
-      <Navbar />
+    <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
+      <div className="relative min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black overflow-x-hidden">
+        {/* Custom Animated Right Scrollbar */}
+        <CustomScrollbar />
 
-      {/* Added pt-24 or pt-28 to clear the fixed navbar */}
-      <main className="pt-24"> 
-        <Outlet />
-      </main>
-    </div>
+        {/* Global Cursor Spotlight */}
+        <CursorSpotlight />
+
+        {/* Floating Navigation */}
+        <Navbar />
+
+        {/* Main Content Area */}
+        <main className="relative z-10 w-full">
+          <Outlet />
+        </main>
+      </div>
+    </ReactLenis>
   );
 };
 
