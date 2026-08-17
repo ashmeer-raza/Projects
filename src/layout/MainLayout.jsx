@@ -8,7 +8,7 @@ import CustomScrollbar from "../components/CustomScrollbar";
 const MainLayout = () => {
   return (
     <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
-      <div className="relative text-white selection:bg-white selection:text-black overflow-x-hidden">
+      <div className="relative text-white selection:bg-white selection:text-black overflow-x-hidden"> {/*min-h screen*/}
         {/* Custom Animated Right Scrollbar */}
         <CustomScrollbar />
 
@@ -19,7 +19,7 @@ const MainLayout = () => {
         <Navbar />
 
         {/* Main Content Area */}
-        <main className="relative z-10 w-full">
+        <main className="relative z-10"> {/*w-full*/}
           <Outlet />
         </main>
       </div>
