@@ -8,7 +8,7 @@ import CustomScrollbar from "../components/CustomScrollbar";
 const MainLayout = () => {
   return (
     <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
-      <div className="relative min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black overflow-x-hidden">
+      <div className="relative text-white selection:bg-white selection:text-black overflow-x-hidden">
         {/* Custom Animated Right Scrollbar */}
         <CustomScrollbar />
 
